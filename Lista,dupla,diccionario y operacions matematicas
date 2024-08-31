@@ -1,0 +1,40 @@
+# 1. Conversión de lista a tupla y viceversa
+lista_original = [100, 30, 20]
+tupla = tuple(lista_original)
+lista_final = list(tupla)
+print("Lista final:", lista_final)
+
+# 2. Diccionario de precios para camisas
+camisas = ("camisa1", "camisa2", "camisa3")
+precios = [120, 90, 150]
+diccionario_camisas = dict(zip(camisas, precios))
+for camisa, precio in diccionario_camisas.items():
+    if precio > 100:
+        print(f"La camisa {camisa} cuesta más de 100.")
+
+# 3. Conteo de palabras
+palabras = ["manzana", "banana", "manzana", "pera", "banana"]
+contador_palabras = {}
+for palabra in palabras:
+    contador_palabras[palabra] = contador_palabras.get(palabra, 0) + 1
+print("Conteo de palabras:", contador_palabras)
+
+# 4. Suma y promedio de una matriz
+def calcular_suma_promedio(matriz):
+    suma_total = sum(sum(fila) for fila in matriz)
+    promedio = suma_total / len(matriz) / len(matriz[0])
+    return suma_total, promedio
+
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+suma, promedio = calcular_suma_promedio(matriz)
+print("Suma total:", suma)
+print("Promedio:", promedio)
+
+# 5. Suma de precios de productos
+productos = [
+    {'nombre': 'manzana', 'precio': 1.5},
+    {'nombre': 'banana', 'precio': 0.8},
+    {'nombre': 'pera', 'precio': 1.2}
+]
+suma_total_precios = sum(producto['precio'] for producto in productos)
+print("Suma total de precios:", suma_total_precios)
